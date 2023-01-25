@@ -1,8 +1,10 @@
  export const getGifs = async( category ) => {
         
-        const url = `https://api.giphy.com/v1/gifs/trending?api_key=akgTWMPlk9Q9xxWaRyg9Hiy9v6KQrPzL&q=${ category }&limit=10`;
+        const url = `https://api.giphy.com/v1/gifs/search?api_key=akgTWMPlk9Q9xxWaRyg9Hiy9v6KQrPzL&q=${ category }&limit=20`;
         const resp = await fetch( url );
         const { data } = await resp.json();
+
+       
 
         const gifs = data.map( img => ({
             id: img.id,
